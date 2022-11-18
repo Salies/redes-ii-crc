@@ -25,7 +25,7 @@ while True:
         msg_s = ''.join([chr(int(msg_t[i:i+8], 2)) for i in range(0, len(msg_t), 8)])
         print('Mensagem recebida com sucesso:', msg_s)
     else:
-        print("Falha no recebimento da mensagem. Resto: ", str(re) + ".")
+        print("Falha no recebimento da mensagem. Resto:", str(re) + ".")
     # mata o servidor quando receber a mensagem
     if(msg):
         conn.close()
