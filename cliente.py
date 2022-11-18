@@ -3,7 +3,7 @@ from sys import exit
 from crc import crc
 
 # Antes de tudo, interagir com o usuário
-valid_inputs = ['S', 'N']
+valid_inputs = ['S', 'N', 's', 'n']
 u_input = input('Forçar erro na mensagem? (S/N) ')
 if u_input not in valid_inputs:
     exit("Entrada inválida.")
@@ -24,7 +24,7 @@ msg_b = int(''.join(format(ord(c), 'b').zfill(8) for c in msg), 2)
 msg_crc = crc(msg_b, gen)[0]
 
 # Forçando erro: flipando alguns bits
-if(u_input == 'S'):
+if(u_input == 'S' or u_input == 's'):
     # um número absolutamente aleatório que escolhi para "bagunçar a mensagem"
     msg_crc ^= 0x25A2A6E5
 
